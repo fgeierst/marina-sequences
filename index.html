@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>MarinA</title>
+	<style>
+		body {
+			overflow-x: hidden;
+			overflow-y: scroll;
+		}
+
+		@media (pointer: fine) {
+
+			/* devices with mouse  */
+			#pointerImg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				max-width: 80vw;
+			}
+		}
+
+		@media (hover: none) {
+
+			/* touch devices */
+			#pointerImg {
+				position: fixed;
+				bottom: 0;
+				left: 20vw;
+				pointer-events: none;
+				max-width: 80vw;
+				max-height: 50vh;
+			}
+		}
+
+		.postures {
+			display: grid;
+			padding-inline-start: 0;
+			grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+		}
+
+		.posture {
+			list-style: none;
+		}
+
+		.posture__link {
+			display: grid;
+			padding: 2em;
+			cursor: none;
+		}
+
+		.posture__link:hover {
+			filter: invert(87%) sepia(26%) saturate(666%) hue-rotate(99deg) brightness(94%) contrast(91%);
+		}
+
+		.posture__img {
+			width: 100%;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<ul class="postures">
+		<li class="posture">
+			<a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-01.svg" alt="Posture 02">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-02.svg" alt="Posture 03">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-03.svg" alt="Posture 04">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-04.svg" alt="Posture 05">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-05.svg" alt="Posture 06">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-06.svg" alt="Posture 07">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-07.svg" alt="Posture 08">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-08.svg" alt="Posture 01">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-01.svg" alt="Posture 02">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-02.svg" alt="Posture 03">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-03.svg" alt="Posture 04">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-04.svg" alt="Posture 05">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-05.svg" alt="Posture 06">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-06.svg" alt="posture 07">
+			</a>
+		</li>
+		<li class="posture"><a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-07.svg" alt="posture 08">
+			</a>
+		</li>
+		<li class="posture">
+			<a class="posture__link" href="/gallery-01.html">
+				<img class="posture__img" src="/assets/postures/posture-08.svg" alt="Figur 01">
+			</a>
+		</li>
+	</ul>
+
+	<img id="pointerImg" src="/assets/pointer.png" alt="">
+
+	<script>
+		if (matchMedia('(pointer:fine)').matches) {
+			document.body.style.cursor = 'none';
+			const pointerImg = document.getElementById('pointerImg');
+			window.addEventListener('mousemove', (e) => {
+				requestAnimationFrame(() => {
+					pointerImg.style.transform = `translate(${e.pageX - pointerImg.width / 2}px, ${e.pageY - 20}px)`;
+				})
+			})
+		}
+	</script>
+</body>
+
+</html>

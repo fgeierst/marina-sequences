@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gallery 01 - MarinA</title>
+	<style>
+		.gallery {
+			padding-inline-start: 0;
+			height: 100vh;
+			display: grid;
+			cursor: pointer;
+		}
+
+		.gallery__item {
+			list-style: none;
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+
+		}
+
+		.gallery__img {
+			width: 100%;
+			height: auto;
+			max-height: 90vh;
+		}
+	</style>
+</head>
+
+<body>
+
+	<ul class="gallery">
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-01.svg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-02.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-03.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-04.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-05.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-06.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-07.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-08.jpg" alt=""></li>
+		<li class="gallery__item"><img class="gallery__img" src="/assets/gallery-01/slide-09.jpg" alt=""></li>
+	</ul>
+	<a href="/index.html">Zurück zur Übersicht</a>
+	<script>
+		const gallery = document.querySelector('.gallery');
+		const items = document.querySelectorAll('.gallery__item');
+		for (let i = 1; i < items.length; i++) {
+			items[i].hidden = true;
+		}
+		let currentSlide = 0;
+		const slidesNum = items.length;
+		gallery.addEventListener('click', () => {
+			if (currentSlide === slidesNum - 1) {
+				window.open('/index.html', '_top');
+			} else {
+				currentSlide++;
+				items[currentSlide].hidden = false;
+			}
+
+		})
+	</script>
+</body>
+
+</html>
