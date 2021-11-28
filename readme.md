@@ -13,4 +13,5 @@ Experimental prototypes for the artist duo MarinA
   
 - Protoype 1
   - Static HTML/CSS/JS, no build process
+  - Branch: https://github.com/fgeierst/marina-sequences/tree/prototype-1
   - Preview deploy: https://marin-a-haende-fgeierst.vercel.app/
