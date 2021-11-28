@@ -144,9 +144,10 @@
 			document.body.style.cursor = 'none';
 			const pointerImg = document.getElementById('pointerImg');
 			window.addEventListener('mousemove', (e) => {
-				requestAnimationFrame(() => {
-					pointerImg.style.transform = `translate(${e.pageX - pointerImg.width / 2}px, ${e.pageY - 20}px)`;
-				})
+				// requestAnimationFrame(() => {
+				// 	pointerImg.style.transform = `translate(${e.pageX - pointerImg.width / 2}px, ${e.pageY - 20}px)`;
+				// })
+				pointerImg.style.transform = `translate(${e.pageX - pointerImg.width / 2}px, ${e.pageY - 20}px)`;
 			})
 		}
 	</script>
